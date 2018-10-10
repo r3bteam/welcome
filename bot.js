@@ -134,35 +134,6 @@ if (message.content.startsWith(prefix + 'pic')) {
 }
 });
 
-client.on('guildMemberAdd', member => {
-  
- 
-  let welcomechannel = client.channels.get("499586848687915049");
-  const guild = member.guild;
-
-     let memberavatar = member.avatarURL;
-          let join = new Discord.RichEmbed()
-          .setColor('#15f153')
-          .setThumbnail(memberavatar)
-          .setTitle('Member Joined!')
-          .addField('🎙 | Welcome!', `Welcome To The Server, ${member}`)
-          .addField('🆔 | User :', "**[" + `${member.id}` + "]**")
-          .addField('👨‍👩‍👧‍👦 | Your Are The Member', `${member.guild.memberCount}`)
-          .addField("Name",`<@${member.id}>`, true)
-          .addField('Server', `${member.guild.name}`, true )
-          .setFooter(`${member.guild.name}`)
-          .setTimestamp()
-  welcomechannel.send(join);
-  
-  member.guild.fetchInvites().then(guildInvites => {
-    const ei = invites[member.guild.id];
-    
-    const invite = guildInvites.find(i => ei.get(i.code).uses < i.uses);
-    const inviter = client.users.get(invite.inviter.id);
-     const logChannel = member.guild.channels.find("name", "🏆【ｗｅｌｃｏｍｅ】🏆");
-   welcomechannel.send(`<@${member.user.id}> Joined! Invited By **${inviter.tag}**.`);
-  });
-});
 
 client.on("guildMemberAdd", (member) => {
 
