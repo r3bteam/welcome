@@ -10,7 +10,7 @@ function forEachObject(obj, func) {
     Object.keys(obj).forEach(function (key) { func(key, obj[key]) })
 }
 client.on('guildMemberAdd', member => {
-let channel = member.guild.channels.get("499586848687915049");
+let channel = member.guild.channels.get("497766943231836181");
 if (member.user.bot) return;
 var Canvas = require('canvas')
 var jimp = require('jimp')
@@ -29,7 +29,7 @@ hours = hours - 12;
 if (hours == 0) {
 hours = 12;
 }
-const w = ['./no2.png'];
+const w = ['./welcome.png'];
               let Image = Canvas.Image,
                   canvas = new Canvas(557, 241),
                   ctx = canvas.getContext('2d');
@@ -137,7 +137,7 @@ if (message.content.startsWith(prefix + 'pic')) {
 
 client.on("guildMemberAdd", (member) => {
 
-let channel = "499586848687915049"
+let channel = "497766943231836181"
 
     if (!channel) {
 
@@ -159,7 +159,7 @@ let channel = "499586848687915049"
 
     while (!guild)
 
-        guild = client.guilds.get("477104148991442966");
+        guild = client.guilds.get("342626276944773120");
 
     guild.fetchInvites().then((data) => {
 
