@@ -70,25 +70,13 @@ const w = ['./no2.png'];
       let invites = invs.filter(i => i.inviter.id === user.id);
       let inviteCount = invites.reduce((p, v) => v.uses + p, 0);
 
- channel.send(`**Invited By** : **${Invite.inviter} (${inviteCount})**`);
+ channel.send(`**Invited By** : **${Invite.inviter}**`);
 
 })
 }
             dat[Inv] = Invite.uses;
 })
 })
-                              //NAMEً
-                              ctx.font = '44px Arial';
-                              ctx.fontSize = '28px';
-                              ctx.fillStyle = "#FFFFFF";
-      ctx.fillText(`Welcome To ⤵`, 260, 44);
-
-
-                              //NAMEً
-                              ctx.font = '30px Arial';
-                              ctx.fontSize = '22px';
-                              ctx.fillStyle = "#FFFFFF";
-      ctx.fillText(`${member.guild.name}`, 315, 76);
 
                               //AVATARً
                               let Avatar = Canvas.Image;
