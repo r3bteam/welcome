@@ -108,12 +108,12 @@ const w = ['./no2.png'];
 });
 
 client.on('message', message => {
-var prefix = "-";
+var prefix = "+";
  
   if (!message.content.startsWith(prefix)) return;
   var args = message.content.split(' ').slice(1);
   var argresult = args.join(' ');
-  if (message.author.id == '395462979115679755' ) return;
+  if (message.author.id == '450711003324350485' ) return;
  
 if (message.content.startsWith(prefix + 'playing')) {
   client.user.setGame(argresult);
@@ -121,7 +121,7 @@ if (message.content.startsWith(prefix + 'playing')) {
 } else
  
 if (message.content.startsWith(prefix + 'stream')) {
-  client.user.setGame(argresult, "https://www.twitch.tv/sytra_ayman");
+  client.user.setGame(argresult, "https://www.twitch.tv/Elegant");
     message.channel.sendMessage(`**${argresult}** :تم تغيير الحالة الى ستريمنج`)
 } else
  
