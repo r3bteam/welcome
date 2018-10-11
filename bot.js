@@ -191,11 +191,7 @@ client.guilds.get(member.guild.id).channels.get(channel).send(`**Invited By** ${
     });
 });
 
-const Discord = require("discord.js");
 const RichEmbed = require("discord.js");
-const { Client, Util } = require('discord.js');
-const client = new Discord.Client();
-
 
 client.on('message',async message => {
     var prefix = "+";
