@@ -179,7 +179,7 @@ let channel = "497766943231836181"
 
 setTimeout(function(){
 client.guilds.get(member.guild.id).channels.get(channel).send(`**Invited By** ${Invite.inviter} `)
-},2500) // 1000 = ثانيه
+},1500) // 1000 = ثانيه
 
  }
             dat[Inv] = Invite.uses;
