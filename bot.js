@@ -392,7 +392,7 @@ clinet.on('roleCreate', role => {
   }, 1000)
 })
 
-});
+
 client.on('roleDelete', role => {
  
     if(!role.guild.member(client.user).hasPermission('EMBED_LINKS')) return;
