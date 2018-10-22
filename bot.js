@@ -361,7 +361,7 @@ message.author.send(`**مدة الرابط : يـوم
 
 
 
-clinet.on('roleCreate', role => {
+client.on('roleCreate', role => {
   client.setTimeout(() => {
     role.guild.fetchAuditLogs({
         limit: 1,
