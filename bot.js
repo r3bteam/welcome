@@ -225,7 +225,56 @@ msg.delete();
 })
 }
 });
-    
+     client.on('message' , message => {
+          var prefix = "+";
+          if(message.author.bot) return;
+         
+          if(message.content.startsWith(prefix + "rolebc")) {
+            if (!message.member.hasPermission("ADMINISTRATOR"))  return;
+            let args = message.content.split(" ").slice(1);
+         
+            if(!args[0]) {
+              message.channel.send("قم بمنشنة الرتبة | !rolebc @everyone message")
+                return;
+            }
+            if(!args[1]) {
+              message.channel.send("قم بكتابة الرسالة | !rolebc @everyone message")
+                return;
+            }
+         
+              if(args[0] == "@everyone") {
+                message.channel.send(`لقد تم ارسال هذه الرسالة الى ${message.guild.memberCount} اعضاء`)
+                message.guild.members.forEach(m => {
+                  m.send(
+                  "**" + "السيرفر :" + "\n" +
+                  `${message.guild.name}` + "\n" +
+                  "المرسل :" + "\n" +
+                  `${message.author.tag}` + "\n" +
+                  "الرسالة :" + "\n" +
+                  `${args[1]}` + "**"
+                  )
+                })
+                return;
+              }
+         
+                  var role = message.mentions.roles.first();
+                    if(!role) {
+                      message.reply("لا توجد رتبة بهذا الاسم")
+                        return;
+                    }
+                message.guild.members.filter(m => m.roles.get(role.id)).forEach(n => {
+                  n.send(
+                  "**" + "السيرفر :" + "\n" +
+                  `${message.guild.name}` + "\n" +
+                  "المرسل :" + "\n" +
+                  `${message.author.tag}` + "\n" +
+                  "الرسالة :" + "\n" +
+                  `${args[1]}` + "**"
+                  )
+                })
+                message.channel.send(`لقد تم ارسال هذه الرسالة الى ${message.guild.members.filter(m => m.roles.get(role.id)).size} عضو`)
+            }
+        });
                     client.on("message", message => {
                          var prefix = "+";
                         if (message.content.startsWith(prefix + "obc")) {
