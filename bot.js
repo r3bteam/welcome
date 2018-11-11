@@ -212,6 +212,7 @@ client.on('message',async message => {
   });
   });
   }
+  });
 client.on('message', message => {
   if(!message.channel.guild) return;
 var prefix = "+";
